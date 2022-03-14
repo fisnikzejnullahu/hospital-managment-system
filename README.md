@@ -1,4 +1,4 @@
-# hospital-managment-system
+# hospital-managment-system (project in college-2018)
 
 database diagram
 <p align="center">
