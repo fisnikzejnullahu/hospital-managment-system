@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="mainStackPane" prefHeight="703.0" prefWidth="679.0" stylesheets="@../styles/login-style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoginController">
+   <children>
+      <AnchorPane fx:id="loginPane2" prefHeight="829.0" prefWidth="751.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <JFXButton fx:id="loginBtn" buttonType="RAISED" disable="true" layoutX="232.0" layoutY="530.0" onAction="#login" prefHeight="73.0" prefWidth="208.0" text="LOGIN">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+            </JFXButton>
+            <JFXPasswordField fx:id="passwordFld" focusColor="#00b1fc" labelFloat="true" layoutX="119.0" layoutY="344.0" prefHeight="38.0" prefWidth="445.0" promptText="Password" unFocusColor="#dce4e8">
+               <font>
+                  <Font size="17.0" />
+               </font></JFXPasswordField>
+            <Label layoutX="119.0" layoutY="110.0" text="Miresevini, ">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label fx:id="perdoruesiLbl" layoutX="119.0" layoutY="165.0" prefHeight="24.0" prefWidth="163.0" text="to continue to System" />
+            <MaterialDesignIconView glyphName="KEYBOARD_BACKSPACE" layoutX="22.0" layoutY="66.0" onMouseClicked="#backLogin1" size="50">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </MaterialDesignIconView>
+            <Label fx:id="errorPwLabel" layoutX="107.0" layoutY="396.0" prefHeight="73.0" prefWidth="469.0" text="   Paswordi nuk eshte i sakte!" textFill="RED" visible="false" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="loginPane1" prefHeight="829.0" prefWidth="751.0" style="-fx-background-color: #ffffff;">
+         <children>
+            <JFXButton fx:id="vazhdoBtn" buttonType="RAISED" contentDisplay="TEXT_ONLY" disable="true" layoutX="232.0" layoutY="530.0" onAction="#tryLogin" prefHeight="73.0" prefWidth="208.0" text="VAZHDO">
+               <font>
+                  <Font name="System Bold" size="21.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="50.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../images/login-roll.gif" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+            <JFXTextField fx:id="usernameFld" focusColor="#00b0fd" labelFloat="true" layoutX="119.0" layoutY="344.0" prefHeight="38.0" prefWidth="445.0" promptText="Perdoruesi" unFocusColor="#dce4e8">
+               <font>
+                  <Font size="17.0" />
+               </font></JFXTextField>
+            <Label layoutX="119.0" layoutY="110.0" text="Validohu">
+               <font>
+                  <Font name="System Bold" size="38.0" />
+               </font>
+            </Label>
+            <Label layoutX="119.0" layoutY="165.0" prefHeight="24.0" prefWidth="163.0" text="per ta perdorur Sistemin" />
+            <ImageView disable="true" fitHeight="174.0" fitWidth="182.0" layoutX="252.0" layoutY="295.0" opacity="0.3" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logoRKS.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="errorLabel" layoutX="107.0" layoutY="396.0" prefHeight="73.0" prefWidth="469.0" text="Ndodhi nje problem dhe nuk mund te lidhet me databaze! Ju lutem njoftoni ekipin e IT!" textFill="RED" visible="false" wrapText="true">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Label>
+         </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+   </children>
+</StackPane>

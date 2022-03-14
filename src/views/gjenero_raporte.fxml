@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="mainStackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="905.0" prefWidth="1492.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RaporteController">
+   <children>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="905.0" prefWidth="1492.0">
+         <top>
+            <VBox prefHeight="91.0" prefWidth="1427.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Text fill="#485460" fontSmoothingType="LCD" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-weight: bolder; -fx-font-size: 1.3em;" text="Gjenero Raporte" wrappingWidth="222.0048828125" />
+                  <Separator disable="true" prefHeight="21.0" prefWidth="1382.0">
+                     <effect>
+                        <Bloom />
+                     </effect>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets right="30.0" />
+                     </padding>
+                  </Separator>
+               </children>
+               <BorderPane.margin>
+                  <Insets top="30.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets left="30.0" />
+               </padding>
+            </VBox>
+         </top>
+         <center>
+            <AnchorPane prefHeight="824.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="mainAnchorPane" prefHeight="824.0" prefWidth="1492.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <Button fx:id="gjeneroBtn" alignment="CENTER" layoutX="1097.0" layoutY="31.0" maxHeight="243.0" mnemonicParsing="false" onAction="#buildSemundjetReport" prefHeight="72.0" prefWidth="274.0" style="-fx-background-color: #0fbcf9; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 19px;" text="GJENERO" textAlignment="CENTER">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <JFXComboBox fx:id="llojiRaportitComboBox" focusColor="#009688" labelFloat="true" layoutX="41.0" layoutY="67.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="12.0" prefWidth="294.0" promptText="Zgjedh llojin e raportit...">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </JFXComboBox>
+                        <JFXDatePicker fx:id="startDateFld" layoutX="395.0" layoutY="67.0" prefHeight="42.0" prefWidth="225.0" promptText="Prej dates" visible="false">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </JFXDatePicker>
+                        <JFXDatePicker fx:id="endDateFld" layoutX="664.0" layoutY="64.0" prefHeight="42.0" prefWidth="225.0" promptText="Deri më daten" visible="false">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </JFXDatePicker>
+                        <Label layoutX="41.0" prefHeight="49.0" prefWidth="294.0" text="Shkruaj ID-ne e pacientit :">
+                           <font>
+                              <Font name="System Bold Italic" size="17.0" />
+                           </font>
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </Label>
+                        <JFXTextField fx:id="idPersonFld" focusColor="#009688" layoutX="390.0" layoutY="7.0" prefHeight="40.0" prefWidth="222.0" promptText="p.sh 1">
+                           <padding>
+                              <Insets top="10.0" />
+                           </padding>
+                        </JFXTextField>
+                        <TextField fx:id="emriPersonFld" editable="false" layoutX="692.0" layoutY="7.0" prefHeight="40.0" prefWidth="298.0" promptText="emri i pacientit" />
+                        <TableView fx:id="tabelaRaporteve" layoutX="45.0" layoutY="203.0" prefHeight="521.0" prefWidth="1326.0" styleClass="tabela">
+                           <columnResizePolicy>
+                              <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                           </columnResizePolicy>
+                        </TableView>
+                        <Label layoutX="45.0" layoutY="159.0" prefHeight="40.0" prefWidth="139.0" text="Lista e raporteve">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <HBox layoutX="1036.0" layoutY="732.0" prefHeight="38.0" prefWidth="335.0" spacing="15.0">
+                           <children>
+                              <JFXButton buttonType="RAISED" onAction="#editRaporti" prefHeight="37.0" prefWidth="150.0" style="-fx-background-color: #1E88E5;" styleClass="editBtn" text="NDRYSHO" />
+                              <JFXButton buttonType="RAISED" onAction="#deleteRaporti" prefHeight="37.0" prefWidth="150.0" styleClass="deteleBtn" text="FSHIJE" />
+                           </children>
+                        </HBox>
+                        <Label fx:id="errorIdLbl" layoutX="398.0" layoutY="57.0" text="Lejohen vetem numra!" textFill="RED" visible="false" />
+                        <JFXCheckBox fx:id="selectAllCheckBox" layoutX="905.0" layoutY="65.0" prefHeight="41.0" text="Te gjitha" visible="false" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="loadingReportPane" layoutX="600.0" layoutY="350.0" prefHeight="226.0" prefWidth="225.0" visible="false">
+                     <children>
+                        <ImageView fitHeight="175.0" fitWidth="182.0" layoutX="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/ellipsis.gif" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="21.0" layoutY="175.0" text="Duke ndertuar raportin...">
+                           <font>
+                              <Font size="17.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+   <stylesheets>
+      <URL value="@editdialogs/styles.css" />
+      <URL value="@../styles/style.css" />
+   </stylesheets>
+</StackPane>

@@ -1,0 +1,32 @@
+.text-field .input-line
+{
+    -fx-stroke-width: 9px;
+    -fx-scale-y: 3;
+}
+
+.jfx-password-field {
+    -fx-text-fill: #000000;
+    -fx-background-color: TRANSPARENT;
+    -fx-padding: 4 0 4 0;
+    -fx-padding: 0.333333em 0 0.333333em 0;
+}
+
+.jfx-password-field,
+.jfx-password-field:focused {
+    -fx-background-color: TRANSPARENT, TRANSPARENT, TRANSPARENT;
+}
+
+.back-icon {
+    -fx-cursor: hand;
+}
+
+.jfx-button{
+    -fx-cursor: hand;
+    -fx-background-color: #00B0FD;
+    -fx-text-fill: #ffffff;
+}
+
+.jfx-button:hover{
+    /*-fx-background-color: #29B6F6;*/
+    -fx-background-color: #069fe2;
+}

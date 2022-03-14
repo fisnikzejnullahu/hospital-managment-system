@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.AmbientLight?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<JFXTabPane prefHeight="905.0" prefWidth="1492.0" stylesheets="@../styles/style.css" tabMaxHeight="0.0" tabMaxWidth="0.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.PunetoriController">
+    <tabs>
+       <Tab text="Lista e Punetoreve">
+         <content>
+           <AnchorPane fx:id="mainPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <StackPane fx:id="stackPane1" prefHeight="860.0" prefWidth="1492.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" StackPane.alignment="CENTER">
+                           <children>
+                              <TableView fx:id="tabelaPunetorve" layoutX="19.0" layoutY="152.0" prefHeight="666.0" prefWidth="1071.0" styleClass="tabela" />
+                              <AnchorPane fx:id="informationPane" layoutX="1110.0" layoutY="160.0" prefHeight="659.0" prefWidth="362.0" style="-fx-background-color: white;">
+                                 <children>
+                                    <VBox layoutX="91.0" layoutY="80.0" prefHeight="664.0" prefWidth="362.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Pane prefHeight="232.0" prefWidth="362.0">
+                                             <children>
+                                                <ImageView fx:id="fotoFld" fitHeight="113.0" fitWidth="130.0" layoutX="125.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/logoRKS.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="FILE_EXPORT" layoutX="309.0" layoutY="41.0" onMouseClicked="#exportPunetoriDataToPdf" size="30">
+                                                   <cursor>
+                                                      <Cursor fx:constant="HAND" />
+                                                   </cursor>
+                                                </MaterialDesignIconView>
+                                             </children>
+                                          </Pane>
+                                          <Separator prefHeight="14.0" prefWidth="362.0">
+                                             <effect>
+                                                <Bloom threshold="0.2" />
+                                             </effect>
+                                          </Separator>
+                                          <Pane prefHeight="537.0" prefWidth="362.0">
+                                             <children>
+                                                <Label fx:id="nrPersonalLbl" layoutX="61.0" layoutY="14.0" prefHeight="28.0" prefWidth="275.0" text="Nr. personal: " textFill="#5e5e5e">
+                                                   <font>
+                                                      <Font name="System Bold" size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <Label fx:id="emailLbl" layoutX="61.0" layoutY="94.0" prefHeight="28.0" prefWidth="275.0" text="Email: " textFill="#5e5e5e" />
+                                                <Label fx:id="adresaLbl" layoutX="61.0" layoutY="134.0" prefHeight="28.0" prefWidth="275.0" text="Adresa: " textFill="#5e5e5e" />
+                                                <FontAwesomeIconView fill="#1eccdf" glyphName="MAP_MARKER" layoutX="19.0" layoutY="157.0" size="24" />
+                                                <Label fx:id="nrtelLbl" layoutX="61.0" layoutY="174.0" prefHeight="28.0" prefWidth="275.0" text="Nr. tel: " textFill="#5e5e5e" />
+                                                <Label fx:id="datafillimitLbl" layoutX="61.0" layoutY="214.0" prefHeight="28.0" prefWidth="275.0" text="Data e fillimit te punes: " textFill="#5e5e5e" />
+                                                <Label fx:id="aktivLbl" layoutX="61.0" layoutY="254.0" prefHeight="28.0" prefWidth="275.0" text="Aktiv: " textFill="#5e5e5e" />
+                                                <Label fx:id="datambarimitLbl" layoutX="61.0" layoutY="294.0" prefHeight="28.0" prefWidth="275.0" text="Data e mbarimit te punes: " textFill="#5e5e5e" />
+                                                <JFXButton buttonType="RAISED" layoutX="186.0" layoutY="422.0" onAction="#editPunetori" prefHeight="37.0" prefWidth="150.0" styleClass="editBtn" text="NDRYSHO" />
+                                                <JFXButton buttonType="RAISED" layoutX="27.0" layoutY="422.0" onAction="#deletePunetori" prefHeight="37.0" prefWidth="150.0" styleClass="deteleBtn" text="FSHIJE" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="EMAIL" layoutX="15.0" layoutY="117.0" size="24" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="CREDIT_CARD" layoutX="15.0" layoutY="37.0" size="24" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="TIMETABLE" layoutX="15.0" layoutY="237.0" size="24" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="PHONE" layoutX="15.0" layoutY="197.0" size="24" />
+                                                <Label fx:id="emriBabesLbl" layoutX="61.0" layoutY="54.0" prefHeight="28.0" prefWidth="275.0" text="Emri i babes: " textFill="#5e5e5e" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="RENAME_BOX" layoutX="15.0" layoutY="77.0" size="24" />
+                                                <Label fx:id="gjiniaLbl" layoutX="61.0" layoutY="334.0" prefHeight="28.0" prefWidth="275.0" text="Gjinia: " textFill="#5e5e5e" />
+                                                <Label fx:id="datelindjaLbl" layoutX="61.0" layoutY="374.0" prefHeight="28.0" prefWidth="275.0" text="Datelindja: " textFill="#5e5e5e" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="RECORD" layoutX="15.0" layoutY="277.0" size="24" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="TIMER_OFF" layoutX="15.0" layoutY="317.0" size="24" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="GENDER_MALE_FEMALE" layoutX="15.0" layoutY="357.0" size="24" />
+                                                <MaterialDesignIconView fill="#1eccdf" glyphName="TIMETABLE" layoutX="15.0" layoutY="397.0" size="24" />
+                                             </children>
+                                          </Pane>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                                 <effect>
+                                    <DropShadow color="#b9abab" height="15.0" radius="7.0" width="15.0" />
+                                 </effect>
+                              </AnchorPane>
+                              <AnchorPane layoutX="28.0" layoutY="28.0" prefHeight="97.0" prefWidth="1441.0" style="-fx-background-color: #1eccdf;">
+                                 <children>
+                                    <JFXTextField fx:id="searchFld" focusColor="WHITE" labelFloat="true" layoutX="199.0" layoutY="29.0" prefHeight="41.0" prefWidth="737.0" promptText="Kerko punetorë..." styleClass="searchField" unFocusColor="#1976d2">
+                                       <font>
+                                          <Font size="16.0" />
+                                       </font>
+                                    </JFXTextField>
+                                    <JFXButton buttonType="RAISED" layoutX="1127.0" layoutY="26.0" onAction="#searchPunetore" prefHeight="48.0" prefWidth="209.0" styleClass="kerkoBtn" text="KERKO" />
+                                    <AnchorPane layoutY="1.0" prefHeight="97.0" prefWidth="108.0" style="-fx-background-color: #1976D2;">
+                                       <children>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" layoutX="31.0" layoutY="65.0" size="50" text="" />
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="loadingReportPane" layoutX="600.0" layoutY="350.0" prefHeight="226.0" prefWidth="225.0" visible="false">
+                                 <children>
+                                    <ImageView fitHeight="175.0" fitWidth="182.0" layoutX="25.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/ellipsis.gif" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="21.0" layoutY="175.0" text="Duke ndertuar raportin...">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </StackPane>
+               </children></AnchorPane>
+         </content>
+       </Tab>
+       <Tab text="Shto Punetor">
+         <content>
+             <AnchorPane fx:id="shtoPane" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1244.0">
+                    <StackPane fx:id="stackPane2" prefHeight="180.0" prefWidth="1244.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <AnchorPane>
+                            <children>
+
+                                <ImageView disable="true" fitHeight="167.0" fitWidth="162.0" layoutX="614.0" layoutY="409.0" opacity="0.18" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                     <Image url="@../images/logoRKS.png" />
+                                  </image>
+                               </ImageView>
+                               <TextField fx:id="nrPersonalFld" layoutX="160.0" layoutY="60.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoFields" />
+                               <TextField fx:id="idFld" editable="false" layoutX="160.0" layoutY="135.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoFields" text="ABC-0000001" />
+                               <TextField fx:id="emriFld" layoutX="160.0" layoutY="210.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoFields" />
+                               <TextField fx:id="emriBabesFld" layoutX="160.0" layoutY="285.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoFields" />
+                               <TextField fx:id="mbiemriFld" layoutX="160.0" layoutY="360.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoFields" />
+                               <TextField fx:id="adresaFld" layoutX="160.0" layoutY="435.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoFields" />
+                               <TextField fx:id="shtetiFld" editable="false" layoutX="160.0" layoutY="585.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoFields" text="Kosovë" />
+                               <TextField fx:id="nrTelFld" layoutX="773.0" layoutY="60.0" prefHeight="48.0" prefWidth="285.0" promptText="p.sh 44123456" styleClass="shtoFields" />
+                               <TextField fx:id="emailFld" layoutX="773.0" layoutY="135.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoFields" />
+                               <JFXRadioButton layoutX="775.0" layoutY="285.0" prefHeight="48.0" prefWidth="146.0" selected="true" text="Mashkull">
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="gjiniaToggleGroup" />
+                                 </toggleGroup></JFXRadioButton>
+                               <JFXRadioButton layoutX="921.0" layoutY="285.0" prefHeight="48.0" prefWidth="128.0" text="Femer" toggleGroup="$gjiniaToggleGroup" />
+                               <DatePicker fx:id="datelindjaFld" layoutX="773.0" layoutY="360.0" prefHeight="48.0" prefWidth="285.0" styleClass="shtoDate" />
+                               <Label layoutX="26.0" layoutY="60.0" prefHeight="48.0" prefWidth="141.0" text="Nr. Personal" />
+                               <Label layoutX="26.0" layoutY="135.0" prefHeight="48.0" prefWidth="139.0" text="ID e Punetorit" />
+                               <Label layoutX="26.0" layoutY="285.0" prefHeight="48.0" prefWidth="142.0" text="Emri i babes" />
+                               <Label layoutX="26.0" layoutY="360.0" prefHeight="48.0" prefWidth="141.0" text="Mbiemri" />
+                               <Label layoutX="639.0" layoutY="285.0" prefHeight="48.0" prefWidth="112.0" text="Gjinia" />
+                               <Label layoutX="26.0" layoutY="435.0" prefHeight="48.0" prefWidth="139.0" text="Adresa" />
+                               <Label layoutX="26.0" layoutY="510.0" prefHeight="48.0" prefWidth="142.0" text="Qyteti" />
+                               <Label layoutX="26.0" layoutY="585.0" prefHeight="48.0" prefWidth="141.0" text="Shteti" />
+                               <Label layoutX="639.0" layoutY="60.0" prefHeight="48.0" prefWidth="141.0" text="Nr. telefonit" />
+                               <Label layoutX="639.0" layoutY="360.0" prefHeight="48.0" prefWidth="139.0" text="Datelindja" />
+                               <Label layoutX="26.0" layoutY="210.0" prefHeight="48.0" prefWidth="139.0" text="Emri" />
+                               <Label layoutX="639.0" layoutY="135.0" prefHeight="48.0" prefWidth="142.0" text="Email" />
+                               <JFXButton buttonType="RAISED" layoutX="948.0" layoutY="719.0" onAction="#clearFields" prefHeight="77.0" prefWidth="220.0" styleClass="pastro-btn" text="PASTRO FUSHAT">
+                                  <font>
+                                     <Font name="System Bold" size="20.0" />
+                                  </font>
+                               </JFXButton>
+                               <JFXButton buttonType="RAISED" layoutX="1180.0" layoutY="719.0" onAction="#save" prefHeight="77.0" prefWidth="204.0" styleClass="ruaj-btn" text="RUAJ">
+                                  <font>
+                                     <Font name="System Bold" size="20.0" />
+                                  </font>
+                               </JFXButton>
+                               <Label layoutX="168.0" layoutY="176.0" prefHeight="8.0" prefWidth="211.0" text="ID e gjeneruar automatikisht">
+                                  <font>
+                                     <Font name="System Italic" size="15.0" />
+                                  </font>
+                               </Label>
+                               <Label layoutX="639.0" layoutY="210.0" prefHeight="48.0" prefWidth="141.0" text="Departamenti" />
+                              <AmbientLight color="CHARTREUSE" layoutX="594.0" layoutY="337.0" lightOn="true" />
+                              <ComboBox fx:id="departamentiComboBox" layoutX="773.0" layoutY="210.0" prefHeight="48.0" prefWidth="285.0" styleClass="noborder-combo" />
+                              <ComboBox fx:id="qytetiComboBox" layoutX="160.0" layoutY="510.0" prefHeight="48.0" prefWidth="285.0" styleClass="noborder-combo" />
+                              <JFXComboBox fx:id="prefixTelComboBox" focusColor="#f4f4f4" layoutX="776.0" layoutY="63.0" prefHeight="43.0" prefWidth="101.0" unFocusColor="#f4f4f4">
+                           <styleClass>
+                              <String fx:value="prefixDropDown" />
+                              <String fx:value="noborder-combo" />
+                           </styleClass></JFXComboBox>
+                              <Label layoutX="1274.0" layoutY="63.0" text="FOTO:">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <MaterialDesignIconView fill="#363434" glyphName="ACCOUNT" layoutX="1249.0" layoutY="85.0" size="23" />
+                              <Pane fx:id="photoDetailsPane" layoutX="1163.0" layoutY="116.0" prefHeight="243.0" prefWidth="274.0">
+                                 <children>
+                                    <Circle fx:id="uploadPhotoCircle" fill="WHITE" layoutX="137.0" layoutY="114.0" onMouseClicked="#uploadPhoto" opacity="0.42" radius="100.0" stroke="BLACK" strokeType="INSIDE">
+                                       <cursor>
+                                          <Cursor fx:constant="HAND" />
+                                       </cursor>
+                                       <effect>
+                                          <InnerShadow radius="4.75" width="0.0" />
+                                       </effect>
+                                    </Circle>
+                                    <Label disable="true" layoutX="103.0" layoutY="98.0" prefHeight="31.0" prefWidth="92.0" text="Ngarko foto...">
+                                       <font>
+                                          <Font name="System Italic" size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <FontAwesomeIconView disable="true" fill="#3c1919" glyphName="CAMERA" layoutX="71.0" layoutY="121.0" size="22" />
+                                    <FontAwesomeIconView disable="true" fill="#ae8989" glyphName="QUESTION" layoutX="108.0" layoutY="148.0" opacity="0.24" size="100" />
+                                 </children>
+                              </Pane>
+                              <ImageView fx:id="photoImageView" fitHeight="266.0" fitWidth="250.0" focusTraversable="true" layoutX="1175.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true" visible="false" />
+                              <Separator layoutX="68.0" layoutY="651.0" prefHeight="8.0" prefWidth="1308.0">
+                                 <effect>
+                                    <Bloom />
+                                 </effect>
+                              </Separator>
+                              <Label layoutX="589.0" layoutY="758.0" text="Ministria e Shëndetësisë" textFill="#a5aab0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="609.0" layoutY="776.0" text="http://msh-ks.org/" textFill="#a5aab0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                              </Label>
+                        <FontAwesomeIconView fx:id="removeImgBtn" fill="RED" glyphName="CLOSE" layoutX="1417.0" layoutY="111.0" onMouseClicked="#removeUploadedImage" size="20" visible="false">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </FontAwesomeIconView>
+
+                            </children>
+                        </AnchorPane>
+                    </StackPane>
+             </AnchorPane>
+         </content>
+       </Tab>
+    </tabs>
+</JFXTabPane>

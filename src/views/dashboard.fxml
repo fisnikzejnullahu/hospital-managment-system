@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.materialdesignicons.MaterialDesignIconView?>
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="mainPane" prefHeight="976.0" prefWidth="1765.0" styleClass="main-window" stylesheets="@../styles/style.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashboardController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #f1f1f1;">
+         <left>
+            <VBox prefHeight="796.0" prefWidth="273.0" spacing="2.0" style="-fx-background-color: #fff;" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="126.0" prefWidth="296.0" styleClass="profilBtn">
+                     <children>
+                        <ImageView fitHeight="73.0" fitWidth="94.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/temporaryAdminImg.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="adminLbl" layoutX="81.0" layoutY="42.0" text="Admin" wrapText="true">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                        <Separator disable="true" layoutX="-2.0" layoutY="105.0" prefHeight="21.0" prefWidth="240.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="105.0">
+                           <effect>
+                              <Bloom />
+                           </effect>
+                           <padding>
+                              <Insets bottom="25.0" top="12.0" />
+                           </padding>
+                        </Separator>
+                        <FontAwesomeIconView glyphName="ANGLE_DOUBLE_DOWN" layoutX="231.0" layoutY="63.0" size="22">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </FontAwesomeIconView>
+                     </children>
+                  </AnchorPane>
+                  <JFXButton fx:id="ballinaBtn" alignment="BASELINE_LEFT" onAction="#showPane" prefHeight="46.0" prefWidth="247.0" text="Ballina">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="31" styleClass="menuIconsHover" wrappingWidth="31.0" />
+                     </graphic>
+                     <styleClass>
+                        <String fx:value="selected" />
+                        <String fx:value="menuBtn" />
+                     </styleClass>
+                  </JFXButton>
+                  <JFXButton fx:id="pacientatBtn" alignment="BASELINE_LEFT" onAction="#showPane" prefHeight="46.0" prefWidth="247.0" styleClass="menuBtn" text="Pacientat">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="ACCOUNT_MULTIPLE" size="30" styleClass="menuIconsHover" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="punetoretBtn" alignment="BASELINE_LEFT" onAction="#showPane" prefHeight="46.0" prefWidth="247.0" styleClass="menuBtn" text="Punetoret">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="26" styleClass="menuIconsHover" wrappingWidth="31.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton alignment="BASELINE_LEFT" prefHeight="46.0" prefWidth="247.0" styleClass="menuBtn" text="Doktoret">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="ACCOUNT_BOX_OUTLINE" size="30" styleClass="menuIconsHover" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="semundjetBtn" alignment="BASELINE_LEFT" onAction="#showPane" prefHeight="46.0" prefWidth="247.0" styleClass="menuBtn" text="Semundjet">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="MEDKIT" size="28" styleClass="menuIconsHover" wrappingWidth="31.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="departamentiBtn" alignment="BASELINE_LEFT" onAction="#showPane" prefHeight="46.0" prefWidth="247.0" styleClass="menuBtn" text="Departamentet">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <FontAwesomeIconView fill="WHITE" glyphName="TH_LIST" size="28" styleClass="menuIconsHover" wrappingWidth="31.0" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="raporteBtn" alignment="BASELINE_LEFT" onAction="#showPane" prefHeight="46.0" prefWidth="247.0" styleClass="menuBtn" text="Gjenero Raporte">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="CHART_AREASPLINE" size="30" styleClass="menuIconsHover" />
+                     </graphic>
+                  </JFXButton>
+                  <JFXButton fx:id="logoutBtn" alignment="BASELINE_LEFT" onAction="#showPane" prefHeight="46.0" prefWidth="247.0" styleClass="menuBtn" text=" Logout">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                     <graphic>
+                        <MaterialDesignIconView glyphName="LOGOUT" size="30" styleClass="menuIconsHover" wrappingWidth="30.0" />
+                     </graphic>
+                  </JFXButton>
+               </children>
+               <padding>
+                  <Insets left="12.0" />
+               </padding>
+               <BorderPane.margin>
+                  <Insets />
+               </BorderPane.margin>
+               <effect>
+                  <DropShadow color="#b9abab" height="12.0" radius="6.25" width="15.0" />
+               </effect>
+            </VBox>
+         </left>
+         <top>
+            <AnchorPane prefHeight="71.0" prefWidth="1392.0" style="-fx-background-color: #1eccdf;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label layoutX="78.0" layoutY="16.0" prefHeight="39.0" prefWidth="442.0" text="SISTEMI PËR KUJDESIN MJEKËSOR" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="51.0" fitWidth="49.0" layoutX="14.0" layoutY="10.0">
+                     <image>
+                        <Image url="@../images/logoRKS.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </top>
+         <center>
+            <AnchorPane fx:id="showPane" BorderPane.alignment="CENTER" />
+         </center>
+      </BorderPane>
+   </children>
+</StackPane>

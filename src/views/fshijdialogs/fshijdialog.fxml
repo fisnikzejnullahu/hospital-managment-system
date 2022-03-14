@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<JFXDialogLayout maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="257.0" prefWidth="545.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.fshijdialogs.PunetoriDeleteController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="258.0" prefWidth="530.0">
+         <children>
+            <Label layoutX="23.0" layoutY="66.0" text="A jeni te sigurt se doni te fshini punetorin: ">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="23.0" layoutY="2.0" prefHeight="49.0" prefWidth="283.0" text="FSHIJ PUNETORE">
+               <font>
+                  <Font name="System Bold" size="19.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="fshijBtn" buttonType="RAISED" layoutX="398.0" layoutY="187.0" prefHeight="38.0" prefWidth="125.0" style="-fx-background-color: #e53935;" text="FSHIJE" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="mbyllBtn" buttonType="RAISED" layoutX="263.0" layoutY="187.0" prefHeight="38.0" prefWidth="125.0" style="-fx-background-color: #26C6DA;" text="MBYLL" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <Label fx:id="emriPerTuFshireLbl" layoutX="60.0" layoutY="98.0" text="emri">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="fshijCheckBox" layoutX="23.0" layoutY="136.0" mnemonicParsing="false" text="Gjithashtu fshije perfundimisht nga databaza!" />
+         </children>
+      </AnchorPane>
+   </children>
+   <padding>
+      <Insets top="50.0" />
+   </padding>
+</JFXDialogLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDialogLayout?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<JFXDialogLayout fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="479.0" prefWidth="478.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="views.editdialogs.SemundjaEditController">
+   <children>
+      <AnchorPane id="AnchorPane" prefHeight="477.0" prefWidth="468.0" stylesheets="@styles.css">
+         <children>
+            <JFXTextField fx:id="semIdFld" disable="true" labelFloat="true" layoutX="51.0" layoutY="54.0" prefHeight="42.0" prefWidth="354.0" promptText="ID e semundjes" visible="false" />
+            <JFXTextField fx:id="emriFld" labelFloat="true" layoutX="51.0" layoutY="134.0" prefHeight="42.0" prefWidth="354.0" promptText="Emri" />
+            <JFXDatePicker fx:id="datakrijimitFld" defaultColor="#4db6ac" layoutX="51.0" layoutY="303.0" prefHeight="42.0" prefWidth="354.0" promptText="Data e semundjes" />
+            <Label fx:id="emriErrorLbl" layoutX="52.0" layoutY="173.0" prefHeight="29.0" prefWidth="282.0" text="Semundja ekziston!" textFill="RED" visible="false" />
+            <Label fx:id="dataErrorLbl" layoutX="51.0" layoutY="351.0" text="Ju lutem plotesoni kete fushe!" textFill="RED" visible="false" />
+            <JFXRadioButton layoutX="150.0" layoutY="232.0" prefHeight="21.0" prefWidth="85.0" selected="true" text="I ulte" textFill="#70970e">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+               <toggleGroup>
+                  <ToggleGroup fx:id="niveliRrezikutToggle" />
+               </toggleGroup>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="224.0" layoutY="232.0" prefHeight="21.0" prefWidth="113.0" text="I mesem" textFill="#d76969" toggleGroup="$niveliRrezikutToggle">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXRadioButton>
+            <JFXRadioButton layoutX="322.0" layoutY="232.0" text="I larte" textFill="RED" toggleGroup="$niveliRrezikutToggle">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font>
+            </JFXRadioButton>
+            <Label layoutX="51.0" layoutY="232.0" text="Niveli i rrezikut:" />
+            <Label fx:id="regjistrimLbl" layoutX="51.0" layoutY="54.0" prefHeight="42.0" prefWidth="354.0" text="Regjistrimi i semundjes:">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <JFXButton fx:id="ruajeBtn" buttonType="RAISED" layoutX="235.0" layoutY="401.0" prefHeight="60.0" prefWidth="165.0" style="-fx-background-color: #4DB6AC;" styleClass="ruaj-btn" text="RUAJE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            <JFXButton fx:id="fshijeBtn" buttonType="RAISED" layoutX="51.0" layoutY="401.0" prefHeight="60.0" prefWidth="165.0" style="-fx-background-color: #e53935;" text="FSHIJE" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+         </children>
+         <padding>
+            <Insets bottom="66.0" right="55.0" />
+         </padding>
+      </AnchorPane>
+   </children>
+</JFXDialogLayout>
